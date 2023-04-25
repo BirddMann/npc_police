@@ -6,14 +6,6 @@ description 'OIV_addons'
 
 version '1.0.0'
 
-client_scripts {
-	'client/main.lua'
-}
-
-server_scripts {
-	'client/server.lua'
-}
-
 files {
 	'data/popcycle.dat',
 	'data/popgroups.ymt',
