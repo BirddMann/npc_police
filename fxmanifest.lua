@@ -3,6 +3,7 @@ fx_version 'adamant'
 game 'gta5'
 
 description 'NPC_police'
+author 'Bird'
 
 version '1.0.0'
 
