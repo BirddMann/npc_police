@@ -9,102 +9,31 @@ Citizen.CreateThread(function()
 	end
 end)
 
--- Spawn NPC Trucks, Boats, and Trains
+--NPC Police Spawns
 Citizen.CreateThread(function()
 	while true do
-		Citizen.Wait(1)
-		SetGarbageTrucks(true)  
-		SetRandomBoats(true)  
-		SwitchTrainTrack(0, true) 
-		SwitchTrainTrack(3, true) 
-		SetTrainTrackSpawnFrequency(0, 45000) 
-		SetTrainTrackSpawnFrequency(3, 45000) 
-		SetRandomTrains(true) 
-	end
-end)
-
--- Hide Reticle unless holding Sniper or Marksman MK2
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		local ped = PlayerPedId()
-		local pedweapon = GetSelectedPedWeapon(ped)
-		if pedweapon ~= 0x05FC3C11 and pedweapon ~= 0x6A6C02E0 then
-			HideHudComponentThisFrame(14)
+		Citizen.Wait(1000)
+		StopAnyPedModelBeingSuppressed()
+		SetScenarioTypeEnabled(WORLD_VEHICLE_POLICE_CAR, true)  
+		SetScenarioTypeEnabled(WORLD_VEHICLE_POLICE_BIKE, true)  
+		SetScenarioTypeEnabled(WORLD_VEHICLE_POLICE_NEXT_TO_CAR, true)  
+		SetCreateRandomCops(true)  
+		SetCreateRandomCopsNotOnScenarios(true)
+		SetCreateRandomCopsOnScenarios(true) 	
+		SetVehicleModelIsSuppressed(GetHashKey("police"), false)  
+		SetVehicleModelIsSuppressed(GetHashKey("police2"), false)  
+		SetVehicleModelIsSuppressed(GetHashKey("police3"), false)  
+		SetVehicleModelIsSuppressed(GetHashKey("police4"), false)  
+		SetVehicleModelIsSuppressed(GetHashKey("policeb"), false)  
+		SetVehicleModelIsSuppressed(GetHashKey("policet"), false)  
+		SetVehicleModelIsSuppressed(GetHashKey("pranger"), false)  
+		SetVehicleModelIsSuppressed(GetHashKey("sheriff"), false)	
+		SetVehicleModelIsSuppressed(GetHashKey("sheriff2"), false)	
+		EnableDispatchService(2, false)	
+		if IsPedInAnyVehicle(PlayerPedId(), false) then
+			SetDispatchIdealSpawnDistance(500.0) --Ensure no pop-ins while driving fast
+		else
+			SetDispatchIdealSpawnDistance(250.0)
 		end
 	end
-end)
-
--- Disable Aircraft Music
-Citizen.CreateThread(function()
-	while true do
-		Citizen.Wait(1)
-		SetAudioFlag("DisableFlightMusic", true)
-	end
-end)
-
--- Player Blips
-function GetPlayers()
-	local players = {}
-	for i = 0, 48 do
-		if NetworkIsPlayerActive(1) then
-			table.insert(players, 1)
-		end
-	end
-	return players
-end
-Citizen.CreateThread(function()
-	local blips = {}
-	local currentPlayer = PlayerId()
-	while true do
-		Wait(100)
-		local players = GetPlayers()
-		for _, player in ipairs(GetActivePlayers()) do
-			if player ~= currentPlayer then
-				local playerPed = GetPlayerPed(player)
-				local playerName = GetPlayerName(player)
-				RemoveBlip(blips[player])
-				local new_blip = AddBlipForEntity(playerPed)
-				SetBlipNameToPlayerName(new_blip, player)
-				SetBlipColour(new_blip, 11)
-				SetBlipAsShortRange(new_blip, true)
-				SetBlipScale(new_blip, 0.8) 
-				SetBlipCategory(new_blip, 7)
-				--SetBlipPriority(new_blip, 100) 
-				blips[player] = new_blip
-			end
-		end
-	end
-end)
-blipsout = false
-Citizen.CreateThread(function()
-    while true do
-		Wait(1)
-		blip2 = GetMainPlayerBlipId()
-		ped2 = GetPlayerPed(-1)
-		playername2 = GetPlayerName(ped2)
-		if blipsout == false then
-			SetBlipSprite(blip2, 1) 
-			SetBlipColour(blip2, 11) 
-			SetBlipScale(blip2, 0.8) 
-			SetBlipNameToPlayerName(blip2, playername2) 
-			SetBlipDisplay(blip2, 2) 
-			blipsout = true
-		end
-	end
-end)
-CreateThread(function()
-    while true do
-        ExtendWorldBoundaryForPlayer(
-            -100000000000000000000000.0,
-            -100000000000000000000000.0,
-            100000000000000000000000.0
-        )  
-        ExtendWorldBoundaryForPlayer(
-            100000000000000000000000.0,
-            100000000000000000000000.0,
-            100000000000000000000000.0
-        ) 
-		Wait(0)
-    end
 end)
