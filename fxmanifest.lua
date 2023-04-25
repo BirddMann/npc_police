@@ -2,7 +2,7 @@ fx_version 'adamant'
 
 game 'gta5'
 
-description 'OIV_addons'
+description 'NPC_police'
 
 version '1.0.0'
 
