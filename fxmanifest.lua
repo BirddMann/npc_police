@@ -12,10 +12,8 @@ client_scripts {
 
 files {
 	'data/popcycle.dat',
-	'data/popgroups.ymt',
-	'data/loadouts.meta'
+	'data/popgroups.ymt'
 }
 
 data_file 'POPSCHED_FILE' 'data/popcycle.dat'
 data_file 'FIVEM_LOVES_YOU_341B23A2F0E0F131' 'data/popgroups.ymt'
-data_file 'LOADOUTS_FILE' 'data/loadouts.meta'
