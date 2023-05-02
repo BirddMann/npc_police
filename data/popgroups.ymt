@@ -6185,6 +6185,10 @@
 				<Item><Name>hermes</Name><Variations type="NULL"/></Item>
 				<Item><Name>hustler</Name><Variations type="NULL"/></Item>
 				<Item><Name>savestra</Name><Variations type="NULL"/></Item>
+				<Item><Name>Panthere</Name><Variations type="NULL"/></Item>
+				<Item><Name>R300</Name><Variations type="NULL"/></Item>
+				<Item><Name>Journey2</Name><Variations type="NULL"/></Item>
+				<Item><Name>Surfer3</Name><Variations type="NULL"/></Item>
 			</models>
 			<flags>POPGROUP_AMBIENT POPGROUP_SCENARIO</flags>
 		</Item>
@@ -6243,6 +6247,10 @@
 				<Item><Name>Dominator7</Name><Variations type="NULL"/></Item>
 				<Item><Name>dominator8</Name><Variations type="NULL"/></Item>
 				<Item><Name>Euros</Name><Variations type="NULL"/></Item>
+				<Item><Name>Issi8</Name><Variations type="NULL"/></Item>
+				<Item><Name>Tulip2</Name><Variations type="NULL"/></Item>
+				<Item><Name>Everon2</Name><Variations type="NULL"/></Item>
+				<Item><Name>Boor</Name><Variations type="NULL"/></Item>
 			</models>
 			<flags>POPGROUP_AMBIENT POPGROUP_SCENARIO POPGROUP_NETWORK_COMMON</flags>
 		</Item>
@@ -6301,6 +6309,10 @@
 				<Item><Name>Dominator7</Name><Variations type="NULL"/></Item>
 				<Item><Name>dominator8</Name><Variations type="NULL"/></Item>
 				<Item><Name>Euros</Name><Variations type="NULL"/></Item>
+				<Item><Name>Issi8</Name><Variations type="NULL"/></Item>
+				<Item><Name>Tulip2</Name><Variations type="NULL"/></Item>
+				<Item><Name>Everon2</Name><Variations type="NULL"/></Item>
+				<Item><Name>Boor</Name><Variations type="NULL"/></Item>
 			</models>
 			<flags>POPGROUP_AMBIENT POPGROUP_SCENARIO POPGROUP_NETWORK_COMMON</flags>
 		</Item>
@@ -6356,6 +6368,10 @@
 				<Item><Name>clique</Name><Variations type="NULL"/></Item>
 				<Item><Name>deviant</Name><Variations type="NULL"/></Item>
 				<Item><Name>impaler</Name><Variations type="NULL"/></Item>
+				<Item><Name>Virtue</Name><Variations type="NULL"/></Item>
+				<Item><Name>Entity3</Name><Variations type="NULL"/></Item>
+				<Item><Name>Broadway</Name><Variations type="NULL"/></Item>
+				<Item><Name>Eudora</Name><Variations type="NULL"/></Item>
 			</models>
 			<flags>POPGROUP_AMBIENT POPGROUP_SCENARIO</flags>
 		</Item>
@@ -6613,6 +6629,8 @@
 				<Item><Name>cliffhanger</Name><Variations type="NULL"/></Item>
 				<Item><Name>shinobi</Name><Variations type="NULL"/></Item>
 				<Item><Name>Remus</Name><Variations type="NULL"/></Item>
+				<Item><Name>Powersurge</Name><Variations type="NULL"/></Item>
+				<Item><Name>Manchez3</Name><Variations type="NULL"/></Item>
 			</models>
 			<flags>POPGROUP_AMBIENT POPGROUP_SCENARIO</flags>
 		</Item>
